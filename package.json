@@ -1,0 +1,11 @@
+{
+  "name": "niva-bupa-vapi-mock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mock endpoints for Vapi-driven Outbound AI agent demo (Niva Bupa welcome calling). Synthetic data only.",
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
