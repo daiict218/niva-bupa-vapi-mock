@@ -10,6 +10,7 @@ All data is fabricated for demo purposes. There is no real customer information 
 |---|---|---|
 | POST `/api/get-customer-profile` | Identity lookup by phone number | `{ "phone_number": "+919876543210" }` |
 | POST `/api/get-policy-details` | Policy lookup by customer id | `{ "customer_id": "NB-784521" }` |
+| POST `/api/schedule-callback` | Schedule callback with human advisor | `{ "customer_id": "NB-784521", "preferred_date": "2026-05-03", "preferred_time": "14:00", "reason": "policy details" }` |
 
 Both endpoints also respond to GET (returns a usage hint, useful for sanity-checking the deploy).
 
@@ -71,6 +72,37 @@ In Vapi's tool configuration, add two custom function tools:
       }
     },
     "required": ["customer_id"]
+  }
+  ```
+
+### Tool 3: `schedule_callback`
+
+- Name: `schedule_callback`
+- Description: "Schedule a callback with a human Niva Bupa advisor. Use whenever the customer asks a question outside the welcome-call scope (claims, hospital network, sub-limits, room rent, waiting period, exclusions) OR explicitly asks for a callback. Returns a confirmation_id and the advisor name."
+- Server URL: `https://YOUR-PROJECT.vercel.app/api/schedule-callback`
+- Parameters:
+  ```json
+  {
+    "type": "object",
+    "properties": {
+      "customer_id": {
+        "type": "string",
+        "description": "Customer id from get_customer_profile, e.g. NB-784521"
+      },
+      "preferred_date": {
+        "type": "string",
+        "description": "ISO date YYYY-MM-DD"
+      },
+      "preferred_time": {
+        "type": "string",
+        "description": "24-hour time HH:MM"
+      },
+      "reason": {
+        "type": "string",
+        "description": "Short tag: policy details, claim process, hospital network, etc."
+      }
+    },
+    "required": ["customer_id", "preferred_date", "preferred_time"]
   }
   ```
 
