@@ -29,6 +29,10 @@ function lookupCustomer(phoneNumber) {
   return MOCK_CUSTOMERS[DEFAULT_PHONE];
 }
 
+// Note: phone_number is intentionally OPTIONAL in the Vapi tool schema.
+// Web-test calls have no real phone, so the LLM should call this tool
+// with no args and we return the default demo customer (Rajesh).
+
 function extractInput(body) {
   if (!body || typeof body !== 'object') return { phoneNumber: null, toolCallId: null };
 
