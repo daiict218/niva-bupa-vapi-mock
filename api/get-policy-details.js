@@ -9,7 +9,7 @@ const MOCK_POLICIES = {
     sum_insured: 1500000,
     coverage_type: 'Family Floater',
     primary_member_count: 4,
-    member_names: ['Rajesh Kumar', 'Sunita Kumar', 'Aarav Kumar', 'Diya Kumar'],
+    member_names: ['Ajay Gaur', 'Pooja Gaur', 'Krishan Gaur', 'Krishna Gaur'],
     network_hospitals_url: 'https://www.nivabupa.com/network-hospitals',
     relationship_manager_name: 'Anita Mehta',
     relationship_manager_phone: '1860-500-8888',

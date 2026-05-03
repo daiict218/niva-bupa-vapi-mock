@@ -4,11 +4,11 @@
 const MOCK_CUSTOMERS = {
   '+919876543210': {
     customer_id: 'NB-784521',
-    name: 'Rajesh Kumar',
+    name: 'Ajay Gaur',
     date_of_birth: '1985-03-12',
     address_city: 'Mumbai',
     address_pincode: '400028',
-    language_preference: 'Hindi',
+    language_preference: 'English',
   },
   '+919876543211': {
     customer_id: 'NB-784522',
